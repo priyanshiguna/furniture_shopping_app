@@ -131,13 +131,6 @@ class _SignUpPageState extends State<SignUpPage> {
                               labelText: "Email",
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
-                              // hidePassword: IconButton(
-                              //     onPressed: () {},
-                              //     icon: const Icon(
-                              //       Icons.keyboard_arrow_down_sharp,
-                              //       size: 20,
-                              //       color: Color(0xFF242424),
-                              //     )),
                             ),
                           ),
                           SizedBox(
@@ -202,7 +195,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   color: const Color(0xFF242424),
                                 ),
                               ),
-                              obscureText: !visiblePassword,
+                              obscureText: !visibleConfirmPassword,
                             ),
                           ),
                           SizedBox(

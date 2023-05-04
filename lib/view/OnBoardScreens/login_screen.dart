@@ -7,6 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../res/common/app_button.dart';
 import '../../res/common/app_text_feild.dart';
+import '../bottomSheet/botton_bar_screen.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);
@@ -175,6 +176,12 @@ class _LogInPageState extends State<LogInPage> {
                                 debugPrint("Successfully Login");
                               } else {
                                 userLogin();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const BottomBarScreen(),
+                                    ));
                               }
                             },
                             child: AppButton(
@@ -214,6 +221,12 @@ class _LogInPageState extends State<LogInPage> {
                               GestureDetector(
                                 onTap: () {
                                   signInWithGoogle();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const BottomBarScreen(),
+                                      ));
                                 },
                                 child: Container(
                                   width: 45,
