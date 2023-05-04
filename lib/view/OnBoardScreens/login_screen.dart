@@ -68,17 +68,17 @@ class _LogInPageState extends State<LogInPage> {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   const Text(
-                    "Hello!",
+                    AppStrings.hello,
                     style: TextStyle(
-                        fontFamily: "Poppins",
+                        fontFamily: AppStrings.poppins,
                         fontWeight: FontWeight.w600,
                         fontSize: 32,
                         color: Color(0xFF242424)),
                   ),
                   const Text(
-                    "WELCOME BACK",
+                    AppStrings.welcome,
                     style: TextStyle(
-                        fontFamily: "Poppins",
+                        fontFamily: AppStrings.poppins,
                         fontWeight: FontWeight.w600,
                         fontSize: 32,
                         color: Color(0xFF242424)),
@@ -112,7 +112,7 @@ class _LogInPageState extends State<LogInPage> {
                             child: TextFieldScreen(
                               controller: emailController,
                               textInputAction: TextInputAction.next,
-                              labelText: "Email",
+                              labelText: AppStrings.emailLabel,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                               hidePassword: IconButton(
@@ -136,7 +136,7 @@ class _LogInPageState extends State<LogInPage> {
                             child: TextFieldScreen(
                               controller: passwordController,
                               textInputAction: TextInputAction.done,
-                              labelText: "Password",
+                              labelText: AppStrings.passwordLabel,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                               hidePassword: IconButton(
@@ -160,9 +160,9 @@ class _LogInPageState extends State<LogInPage> {
                               height:
                                   MediaQuery.of(context).size.height * 0.04),
                           const Text(
-                            "Forgot Password",
+                            AppStrings.forgetPassword,
                             style: TextStyle(
-                                fontFamily: "Inter",
+                                fontFamily: AppStrings.inter,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16,
                                 color: Color(0xFF242424)),
@@ -187,9 +187,9 @@ class _LogInPageState extends State<LogInPage> {
                             child: AppButton(
                               height: MediaQuery.of(context).size.height / 14,
                               width: MediaQuery.of(context).size.width / 1,
-                              title: "Log in",
+                              title: AppStrings.login,
                               fontSize: 16,
-                              fontFamily: "Poppins",
+                              fontFamily: AppStrings.poppins,
                             ),
                           ),
                           SizedBox(
@@ -204,9 +204,9 @@ class _LogInPageState extends State<LogInPage> {
                                   ));
                             },
                             child: const Text(
-                              "Sign up",
+                              AppStrings.signup,
                               style: TextStyle(
-                                  fontFamily: "Inter",
+                                  fontFamily: AppStrings.inter,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 16,
                                   color: Color(0xFF242424)),
@@ -345,7 +345,7 @@ class _LogInPageState extends State<LogInPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Your Email was Not Verified!! \n-->If you Want to verify yor Email please press RESEND button",
+                  AppStrings.emailResend,
                   style: TextStyle(
                       color: Colors.blueGrey,
                       fontSize: 18,

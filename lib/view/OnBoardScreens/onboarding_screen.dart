@@ -30,18 +30,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "MAKE YOUR\nHOME BEAUTIFUL",
+                  AppStrings.heading,
                   style: TextStyle(
-                      fontFamily: "Poppins",
+                      fontFamily: AppStrings.poppins,
                       fontWeight: FontWeight.w600,
                       fontSize: 32,
                       color: Color(0xFF242424)),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 const Text(
-                  "The best simple place where you\ndiscover most wonderful furniture's and\nmake your home beautiful",
+                  AppStrings.headingDescription,
                   style: TextStyle(
-                      fontFamily: "Poppins",
+                      fontFamily: AppStrings.poppins,
                       fontWeight: FontWeight.w400,
                       fontSize: 16,
                       color: Color(0xFF909090)),
@@ -58,9 +58,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: AppButton(
                     height: MediaQuery.of(context).size.height / 12,
                     width: MediaQuery.of(context).size.width / 1,
-                    title: "Get Started",
+                    title: AppStrings.getStarted,
                     fontSize: 18,
-                    fontFamily: "Inter",
+                    fontFamily: AppStrings.inter,
                   ),
                 ),
               ],

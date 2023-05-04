@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:furniture_shopping_app/view/Screens/Home/product_detail_screen.dart';
 
 import '../../../data/app_data.dart';
 import '../../../models/app_model/furniture_model.dart';
@@ -44,19 +45,19 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                   RichText(
                     text: const TextSpan(
-                      text: ' MAKE HOME\n',
+                      text: AppStrings.makeHome,
                       style: TextStyle(
                         fontSize: 14,
-                        fontFamily: "Inter",
+                        fontFamily: AppStrings.inter,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF909090),
                       ),
                       children: <TextSpan>[
                         TextSpan(
-                          text: 'BEAUTIFUL',
+                          text: AppStrings.beautiful,
                           style: TextStyle(
                             fontSize: 18,
-                            fontFamily: "Inter",
+                            fontFamily: AppStrings.inter,
                             fontWeight: FontWeight.w700,
                             color: Color(0x80000000),
                           ),
@@ -101,24 +102,48 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.50,
-              width: MediaQuery.of(context).size.width * 1.5,
-              child: GridView.builder(
-                itemCount: 4,
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1,
-                ),
-                itemBuilder: (BuildContext context, int index) {
-                  return AppSecondContainer(
-                    image: userData!.secondModel![index].image,
-                    nameText: userData!.secondModel![index].nameText,
-                    price: userData!.secondModel![index].price,
-                  );
-                },
+            Expanded(
+              child: ListView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.80,
+                      width: MediaQuery.of(context).size.width * 1.5,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ProductDetailScreen(),
+                              ));
+                        },
+                        child: GridView.builder(
+                          itemCount: 4,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: 0.6,
+                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 10,
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return AppSecondContainer(
+                              image: userData!.secondModel![index].image,
+                              nameText: userData!.secondModel![index].nameText,
+                              price: userData!.secondModel![index].price,
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

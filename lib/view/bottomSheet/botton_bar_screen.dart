@@ -52,7 +52,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     return Scaffold(
       body: screenList[currentIndex],
       bottomSheet: Container(
-          height: 75,
+          height: 40,
           width: double.infinity,
           decoration: const BoxDecoration(
             color: Colors.white,

@@ -68,9 +68,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.04),
                   const Text(
-                    "WELCOME",
+                    AppStrings.welcomeSignup,
                     style: TextStyle(
-                        fontFamily: "Poppins",
+                        fontFamily: AppStrings.poppins,
                         fontWeight: FontWeight.w600,
                         fontSize: 32,
                         color: Color(0xFF242424)),
@@ -104,7 +104,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: TextFieldScreen(
                               controller: nameController,
                               textInputAction: TextInputAction.next,
-                              labelText: "Name",
+                              labelText: AppStrings.name,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                               hidePassword: IconButton(
@@ -128,7 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: TextFieldScreen(
                               controller: emailController,
                               textInputAction: TextInputAction.next,
-                              labelText: "Email",
+                              labelText: AppStrings.emailLabel,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                             ),
@@ -145,7 +145,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: TextFieldScreen(
                               controller: passwordController,
                               textInputAction: TextInputAction.next,
-                              labelText: "Password",
+                              labelText: AppStrings.passwordLabel,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                               hidePassword: IconButton(
@@ -177,7 +177,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: TextFieldScreen(
                               controller: confirmPasswordController,
                               textInputAction: TextInputAction.done,
-                              labelText: "Confirm Password",
+                              labelText: AppStrings.confirmPassword,
                               labelStyle:
                                   const TextStyle(color: Colors.blueGrey),
                               hidePassword: IconButton(
@@ -212,9 +212,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: AppButton(
                               height: MediaQuery.of(context).size.height / 14,
                               width: MediaQuery.of(context).size.width / 1,
-                              title: "Sign up",
+                              title: AppStrings.signup,
                               fontSize: 16,
-                              fontFamily: "Poppins",
+                              fontFamily: AppStrings.poppins,
                             ),
                           ),
                           SizedBox(
@@ -224,9 +224,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
-                                "Already have account?",
+                                AppStrings.account,
                                 style: TextStyle(
-                                    fontFamily: "Inter",
+                                    fontFamily: AppStrings.inter,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14,
                                     color: Color(0xFF909090)),
@@ -240,9 +240,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                       ));
                                 },
                                 child: const Text(
-                                  " Sign in",
+                                  AppStrings.signIn,
                                   style: TextStyle(
-                                      fontFamily: "Inter",
+                                      fontFamily: AppStrings.inter,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 14,
                                       color: Color(0xFF303030)),
