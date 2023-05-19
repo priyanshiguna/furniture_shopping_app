@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_shopping_app/view/Screens/Home/product_detail_screen.dart';
 
@@ -19,6 +20,7 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   User? userData;
   int checkBoxData = 0;
+  FirebaseFirestore fireStore = FirebaseFirestore.instance;
 
   @override
   void initState() {
@@ -150,5 +152,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
         ),
       ),
     );
+  }
+
+  Future<String?> getUser(String product) async {
+    try {
+      CollectionReference productReference =
+          FirebaseFirestore.instance.collection('products');
+      final snapshot = await productReference.doc(1 as String?).get();
+      final data = snapshot.data() as Map<String, dynamic>;
+      return data['products'];
+    } catch (e) {
+      return 'Error fetching user';
+    }
   }
 }
